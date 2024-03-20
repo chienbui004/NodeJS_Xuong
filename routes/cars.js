@@ -1,0 +1,10 @@
+import express from "express";
+import CarsController from "../controllers/cars.js";
+const carsRouter = express.Router();
+const carsControllers = new CarsController();
+carsRouter.get("/", carsControllers.getAllCar);
+carsRouter.post("/", carsControllers.createCar);
+carsRouter.get("/:id", carsControllers.getDetailCar);
+carsRouter.put("/:id", carsControllers.updateCar);
+carsRouter.delete("/:id", carsControllers.deleteCar);
+export default carsRouter;
